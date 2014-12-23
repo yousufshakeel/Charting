@@ -6,10 +6,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import javax.swing.JTextField;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
 
 public class ApplicationMain {
 
 	private JFrame frame;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -43,8 +47,17 @@ public class ApplicationMain {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel topPanel = new JPanel();
+		FlowLayout flowLayout = (FlowLayout) topPanel.getLayout();
+		flowLayout.setAlignment(FlowLayout.LEFT);
 		topPanel.setBackground(Color.WHITE);
 		frame.getContentPane().add(topPanel, BorderLayout.NORTH);
+		
+		textField = new JTextField();
+		topPanel.add(textField);
+		textField.setColumns(10);
+		
+		JButton btnGo = new JButton("go");
+		topPanel.add(btnGo);
 		
 		JPanel bottomPanel = new JPanel();
 		frame.getContentPane().add(bottomPanel, BorderLayout.SOUTH);
